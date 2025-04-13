@@ -31,6 +31,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
     vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
     vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+
+    -- Custom keymaps
+    vim.keymap.set('n', '<leader>vd', function() vim.diagnostic.open_float() end, opts)
+    vim.keymap.set('n', '<leader>[d', function() vim.diagnostic.jump({ count = 1, float = true}) end, opts)
+    vim.keymap.set('n', '<leader>]d', function() vim.diagnostic.jump({ count = -1, float = true}) end, opts)
   end,
 })
 
@@ -80,6 +85,7 @@ require('lspconfig').ts_ls.setup({})
 require('lspconfig').vimls.setup({})
 
 local cmp = require('cmp')
+local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
 cmp.setup({
   sources = {
@@ -91,5 +97,18 @@ cmp.setup({
       vim.snippet.expand(args.body)
     end,
   },
-  mapping = cmp.mapping.preset.insert({}),
+  mapping = cmp.mapping.preset.insert({
+	["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
+	["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+	["<Tab>"] = cmp.mapping(
+		function(fallback)
+			if cmp.visible() then
+				cmp.confirm(cmp_select)
+			else
+				fallback()
+			end
+		end
+	),
+	["<C-Space>"] = cmp.mapping.complete(),
+  }),
 })
