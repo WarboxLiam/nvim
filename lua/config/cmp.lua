@@ -54,9 +54,6 @@ cmp.setup({
       ellipsis_char = '...',
     })
   },
-  experimental = {
-    ghost_text = true, -- Show ghost text as you type
-  },
 })
 
 -- Set configuration for specific filetype
