@@ -71,15 +71,6 @@ return {
 				},
 			})
 
-			vim.lsp.config("eslint", {
-				on_attach = function(_, bufnr)
-					vim.api.nvim_create_autocmd("BufWritePre", {
-						buffer = bufnr,
-						command = "EslintFixAll",
-					})
-				end,
-			})
-
 			-- Use LspAttach autocommand to only map the following keys
 			-- after the language server attaches to the current buffer
 			vim.api.nvim_create_autocmd("LspAttach", {
