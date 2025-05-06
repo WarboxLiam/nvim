@@ -1,2 +1,2 @@
+require("salt.options")
 require("salt.remap")
-require("salt.set")
