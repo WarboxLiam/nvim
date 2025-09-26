@@ -56,6 +56,16 @@ return {
 				"lemminx",
 			})
 
+			vim.lsp.config("cssls", {
+				settings = {
+					css = {
+						lint = {
+							unknownAtRules = "ignore",
+						},
+					},
+				},
+			})
+
 			-- Adjust settings accordingly
 			vim.lsp.config("lua_ls", {
 				settings = {
