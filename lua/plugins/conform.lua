@@ -21,7 +21,7 @@ return {
 				javascriptreact = js_formatter,
 				typescript = js_formatter,
 				typescriptreact = js_formatter,
-				css = { "biome", "biome-organize-imports", stop_after_first = true },
+				css = { "biome", "prettierd", "prettier", stop_after_first = true },
 				html = { "biome", "prettierd", stop_after_first = true },
 				json = { "biome", "prettierd", stop_after_first = true },
 				yaml = { "prettierd", stop_after_first = true },
