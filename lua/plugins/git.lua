@@ -1,4 +1,8 @@
 return {
 	"lewis6991/gitsigns.nvim",
-	opts = {}
+	config = function()
+		require("gitsigns").setup({
+			word_diff = true
+		})
+	end,
 }
