@@ -1,21 +1,28 @@
 return {
 	{
-		'nvim-treesitter/nvim-treesitter',
+		"nvim-treesitter/nvim-treesitter",
 		branch = "main",
 		lazy = false, -- Recommended by plugin author
 		build = ":TSUpdate",
 	},
 	{
-		 'MeanderingProgrammer/treesitter-modules.nvim',
-		dependencies = { 'nvim-treesitter/nvim-treesitter' },
+		"MeanderingProgrammer/treesitter-modules.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		---@module 'treesitter-modules'
 		---@type ts.mod.UserConfig
 		opts = {
 			ensure_installed = {
-				"lua", "vim", "vimdoc", "query",
-				"markdown", "markdown_inline",
-				"xml", "toml", "json",
-				"javascript", "typescript",
+				"lua",
+				"vim",
+				"vimdoc",
+				"query",
+				"markdown",
+				"markdown_inline",
+				"xml",
+				"toml",
+				"json",
+				"javascript",
+				"typescript",
 			},
 			auto_install = true,
 			highlight = {
@@ -59,7 +66,7 @@ return {
 						["@class.outer"] = "<c-v>", -- blockwise
 					},
 					include_surrounding_whitespace = true,
-				}
+				},
 			})
 
 			-- Setup keymaps
@@ -68,16 +75,30 @@ return {
 			-- Example keymap set
 			-- vim.keymap.set({ "x", "o" }, "", function() select("", "textobjects") end)
 
-			vim.keymap.set({ "x", "o" }, "af", function() select("@function.outer", "textobjects") end)
-			vim.keymap.set({ "x", "o" }, "if", function() select("@function.inner", "textobjects") end)
-				
-			vim.keymap.set({ "x", "o" }, "ac", function() select("@class.outer", "textobjects") end)
-			vim.keymap.set({ "x", "o" }, "ic", function() select("@class.inner", "textobjects") end)
+			vim.keymap.set({ "x", "o" }, "af", function()
+				select("@function.outer", "textobjects")
+			end)
+			vim.keymap.set({ "x", "o" }, "if", function()
+				select("@function.inner", "textobjects")
+			end)
 
-			vim.keymap.set({ "x", "o" }, "as", function() select("@local.scope", "locals") end)
+			vim.keymap.set({ "x", "o" }, "ac", function()
+				select("@class.outer", "textobjects")
+			end)
+			vim.keymap.set({ "x", "o" }, "ic", function()
+				select("@class.inner", "textobjects")
+			end)
 
-			vim.keymap.set({ "x", "o" }, "aa", function() select("@parameter.outer", "textobjects") end)
-			vim.keymap.set({ "x", "o" }, "ia", function() select("@parameter.inner", "textobjects") end)
+			vim.keymap.set({ "x", "o" }, "as", function()
+				select("@local.scope", "locals")
+			end)
+
+			vim.keymap.set({ "x", "o" }, "aa", function()
+				select("@parameter.outer", "textobjects")
+			end)
+			vim.keymap.set({ "x", "o" }, "ia", function()
+				select("@parameter.inner", "textobjects")
+			end)
 		end,
-	}
+	},
 }
