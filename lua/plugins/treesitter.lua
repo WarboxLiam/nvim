@@ -65,6 +65,9 @@ return {
 			-- Setup keymaps
 			local select = require("nvim-treesitter-textobjects.select").select_textobject
 
+			-- Example keymap set
+			-- vim.keymap.set({ "x", "o" }, "", function() select("", "textobjects") end)
+
 			vim.keymap.set({ "x", "o" }, "af", function() select("@function.outer", "textobjects") end)
 			vim.keymap.set({ "x", "o" }, "if", function() select("@function.inner", "textobjects") end)
 				
@@ -72,6 +75,9 @@ return {
 			vim.keymap.set({ "x", "o" }, "ic", function() select("@class.inner", "textobjects") end)
 
 			vim.keymap.set({ "x", "o" }, "as", function() select("@local.scope", "locals") end)
+
+			vim.keymap.set({ "x", "o" }, "aa", function() select("@parameter.outer", "textobjects") end)
+			vim.keymap.set({ "x", "o" }, "ia", function() select("@parameter.inner", "textobjects") end)
 		end,
 	}
 }
