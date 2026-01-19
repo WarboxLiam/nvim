@@ -9,10 +9,9 @@ return {
 	},
 	{
 		"tpope/vim-fugitive",
-		config = function()
-			-- Set some sensible commands for git, prefix with g for sensibility
-
-			vim.keymap.set("n", "<leader>gs", vim.cmd.Git) -- Git status
-		end,
+		keys = {
+			{ "<leader>gs", "<cmd>Git<cr>", desc = "Git status" },
+			{ "<leader>gm", "<cmd>Git mergetool<cr>", desc = "Git mergetool" },
+		},
 	}
 }
