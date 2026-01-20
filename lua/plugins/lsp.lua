@@ -61,13 +61,13 @@ return {
 							-- Custom keymaps
 							vim.keymap.set("n", "<leader>vd", function()
 								vim.diagnostic.open_float()
-							end, opts)
+							end, { buffer = event.buf, desc = "Diagnostic - Open float" })
 							vim.keymap.set("n", "<leader>[d", function()
 								vim.diagnostic.jump({ count = 1, float = true })
-							end, opts)
+							end, { buffer = event.buf, desc = "Diagnostic - Next" })
 							vim.keymap.set("n", "<leader>]d", function()
 								vim.diagnostic.jump({ count = -1, float = true })
-							end, opts)
+							end, { buffer = event.buf, desc = "Diagnostic - Prev" })
 						end,
 					})
 				end,
