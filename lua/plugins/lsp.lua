@@ -5,10 +5,8 @@ return {
 			ensure_installed = {
 				"bashls",
 				"cssls",
-				"emmet_ls",
 				"graphql",
 				"html",
-				"eslint",
 				"jsonls",
 				"stylua",
 				"marksman",
