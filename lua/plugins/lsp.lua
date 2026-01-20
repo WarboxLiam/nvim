@@ -14,7 +14,7 @@ return {
 				"marksman",
 				"mdx_analyzer",
 				"rust_analyzer",
-				"ts_ls",
+				"vtsls",
 				"tailwindcss",
 				"vimls",
 				"lemminx", -- XML
