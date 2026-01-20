@@ -3,6 +3,7 @@ return {
 	version = "1.*",
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
+	dependencies = { "rafamadriz/friendly-snippets" },
 	opts = {
 		keymap = { preset = "super-tab" },
 		completion = {
@@ -17,6 +18,7 @@ return {
 			default = {
 				"lsp",
 				"path",
+				"snippets",
 				"buffer",
 			},
 		},
