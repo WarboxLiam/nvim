@@ -25,7 +25,8 @@ return {
 				html = { "biome", "prettierd", "prettier", stop_after_first = true },
 				json = { "biome", "prettierd", "prettier", stop_after_first = true },
 				yaml = { "prettierd", "prettier", stop_after_first = true },
-				markdown = { "prettierd", "prettier", stop_after_first = true },
+				markdown = { "prettierd" },
+				mdc = { "prettierd" },
 				lua = { "stylua" },
 			},
 			format_on_save = {
