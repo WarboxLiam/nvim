@@ -1,1 +1,1 @@
-vim.keymap.set("n", "<Leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<Leader>pv", vim.cmd.Ex, { desc = "File Browser" })

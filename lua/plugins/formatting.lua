@@ -1,8 +1,6 @@
 return {
 	"stevearc/conform.nvim",
 	config = function()
-		vim.env.XDG_RUNTIME_DIR = vim.fn.expand("~/.cache/prettierd")
-
 		local conform = require("conform")
 
 		local function js_formatter(bufnr)
@@ -22,10 +20,11 @@ return {
 				typescript = js_formatter,
 				typescriptreact = js_formatter,
 				css = { "biome", "prettierd", "prettier", stop_after_first = true },
-				html = { "biome", "prettierd", stop_after_first = true },
-				json = { "biome", "prettierd", stop_after_first = true },
-				yaml = { "prettierd", stop_after_first = true },
-				markdown = { "prettierd", stop_after_first = true },
+				html = { "biome", "prettierd", "prettier", stop_after_first = true },
+				json = { "biome", "prettierd", "prettier", stop_after_first = true },
+				yaml = { "prettierd", "prettier", stop_after_first = true },
+				markdown = { "prettierd" },
+				mdc = { "prettierd" },
 				lua = { "stylua" },
 			},
 			format_on_save = {
