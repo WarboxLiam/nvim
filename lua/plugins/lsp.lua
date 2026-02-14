@@ -16,8 +16,6 @@ return {
 				"tailwindcss",
 				"vimls",
 				"lemminx", -- XML
-				-- Formatters
-				"biome",
 			},
 		},
 		dependencies = {
@@ -25,6 +23,13 @@ return {
 			{
 				"neovim/nvim-lspconfig",
 				config = function()
+					-- Register filetypes
+					vim.filetype.add({
+						extension = {
+							mdc = "markdown",
+						},
+					})
+
 					-- Enable vim globals in lua
 					vim.lsp.config("lua_ls", {
 						settings = {

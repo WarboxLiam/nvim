@@ -11,7 +11,7 @@ return {
 			{ desc = "Harpoon - Toggle quick menu" },
 		},
 		{
-			"<C-M>",
+			"<leader>a",
 			function()
 				require("harpoon.mark").add_file()
 			end,

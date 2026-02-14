@@ -1,8 +1,6 @@
 return {
 	"stevearc/conform.nvim",
 	config = function()
-		vim.env.XDG_RUNTIME_DIR = vim.fn.expand("~/.cache/prettierd")
-
 		local conform = require("conform")
 
 		local function js_formatter(bufnr)

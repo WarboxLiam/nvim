@@ -2,12 +2,13 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		branch = "main",
-		lazy = false, -- Recommended by plugin author
+		event = { "BufReadPre", "BufNewFile" },
 		build = ":TSUpdate",
 	},
 	{
 		"MeanderingProgrammer/treesitter-modules.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		event = { "BufReadPre", "BufNewFile" },
 		---@module 'treesitter-modules'
 		---@type ts.mod.UserConfig
 		opts = {
@@ -43,6 +44,7 @@ return {
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		branch = "main",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		event = { "BufReadPre", "BufNewFile" },
 		init = function()
 			-- Disable entire built-in ftplugin mappings to avoid conflicts.
 			-- See https://github.com/neovim/neovim/tree/master/runtime/ftplugin for built-in ftplugins.

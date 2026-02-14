@@ -4,6 +4,7 @@ return {
 	},
 	{
 		"tpope/vim-fugitive",
+		lazy = false,
 		keys = {
 			{ "<leader>gs", "<cmd>Git<cr>", desc = "Git status" },
 			{ "<leader>gm", "<cmd>Git mergetool<cr>", desc = "Git mergetool" },
@@ -12,5 +13,12 @@ return {
 	},
 	{
 		"tpope/vim-rhubarb",
+	},
+	{
+		"akinsho/git-conflict.nvim",
+		version = "*",
+		opts = {
+			default_mappings = false,
+		},
 	},
 }
