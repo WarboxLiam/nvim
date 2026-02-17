@@ -26,6 +26,7 @@ return {
 				markdown = { "prettierd" },
 				mdc = { "prettierd" },
 				lua = { "stylua" },
+				rust = { "rustfmt" },
 			},
 			format_on_save = {
 				timeout_ms = 3000,

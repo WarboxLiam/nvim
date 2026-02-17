@@ -5,7 +5,7 @@ return {
 	opts = {},
 	keys = {
 		{
-			"s",
+			"ss",
 			mode = { "n", "x", "o" },
 			function()
 				require("flash").jump()
@@ -14,7 +14,7 @@ return {
 		},
 		{
 			"S",
-			mode = { "n", "x", "o" },
+			mode = { "n", "o" },
 			function()
 				require("flash").treesitter()
 			end,
